@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { TapkegComponent } from './tapkeg/tapkeg.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TapkegComponent
   ],
   imports: [
     BrowserModule
