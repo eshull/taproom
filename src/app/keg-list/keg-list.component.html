@@ -3,18 +3,22 @@
   <h4 (click)="showKeg(currentKeg)">{{currentKeg.name}}</h4>
   <div *ngIf="kegToShow && kegToShow == currentKeg">
     <ul>
-      <li>{{currentKeg.brand}}
+      <li>Brewery: {{currentKeg.brand}}</li>
     </ul>
 
     <ul>
-      <li>{{currentKeg.type}}
+      <li>Type: {{currentKeg.type}}</li>
     </ul>
     <ul>
-      <li>{{currentKeg.alcoholCnt}}
+      <li>ABU: {{currentKeg.alcoholCnt}}%</li>
     </ul>
     <ul>
-      <li>{{currentKeg.price}}
+      <li>Price/pnt: ${{currentKeg.price}}</li>
     </ul>
-    <button (click)="editButtonClicked(kegToShow)">Edit</button>
+    <ul>
+      <li>Number of Pints Remaining: {{currentKeg.volumeByPint}}</li>
+    </ul>
+    <button (click)="editButtonClicked(currentKeg)">Edit</button>
+    <button (click)="sellButtonClicked(currentKeg)">Sell</button>
   </div>
 </div>
