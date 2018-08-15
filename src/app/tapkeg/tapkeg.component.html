@@ -8,8 +8,13 @@
  <input #newBrand>
 </div>
 <div>
- <label>Enter Keg Type:</label>
- <input #newType>
+  <label>Keg Type:</label>
+ <select #newType>
+    <option [value]="ipa"> IPA </option>
+    <option [value]="stout"> Stout </option>
+    <option [value]="brown"> Brown </option>
+  </select>
+
 </div>
 <div>
  <label>Enter Keg Price:</label>
@@ -21,11 +26,5 @@
 </div>
 <div>
     <button (click)="submitForm(newName.value, newBrand.value, newType.value, newPrice.value, newAlcoholCnt.value); newName.value=''; newBrand.value=''; newType.value=''; newPrice.value=''; newAlcoholCnt.value='';">Tap Keg</button>
-  <!-- <label>Recipe Priority:</label> -->
-  <!-- <select #newPriority>
-    <option [value]="1"> Low Priority </option>
-    <option [value]="2"> Medium Priority </option>
-    <option [value]="3"> High Priority </option>
-  </select> -->
 
 </div>
