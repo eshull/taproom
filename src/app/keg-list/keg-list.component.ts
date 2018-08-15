@@ -32,6 +32,18 @@ typeColor(currentKeg) {
   }
 }
 
+kegLow(currentKeg){
+  if (currentKeg.volumeByPint > 80){
+    return "bg-success";
+  }
+  if (currentKeg.volumeByPint >=50 && currentKeg.volumeByPint <=79){
+    return "bg-warning";
+  }
+  if (currentKeg.volumeByPint < 50){
+    return "bg-danger";
+  }
+}
+
 editButtonClicked(kegToEdit: Keg){
   this.clickSender.emit(kegToEdit);
 }

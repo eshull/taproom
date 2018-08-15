@@ -1,6 +1,6 @@
 <h1>Keg List</h1>
 <div [class]="typeColor(currentKeg)" *ngFor="let currentKeg of childKegList">
-  <h4 (click)="showKeg(currentKeg)">{{currentKeg.name}}</h4>
+  <h4  (click)="showKeg(currentKeg)">{{currentKeg.name}}</h4>
   <div *ngIf="kegToShow && kegToShow == currentKeg">
     <ul>
       <li>Brewery: {{currentKeg.brand}}</li>
@@ -16,7 +16,7 @@
       <li>Price/pnt: ${{currentKeg.price}}</li>
     </ul>
     <ul>
-      <li>Number of Pints Remaining: {{currentKeg.volumeByPint}}</li>
+      <li [class]="kegLow(currentKeg)">Number of Pints Remaining: {{currentKeg.volumeByPint}}</li>
     </ul>
     <button (click)="editButtonClicked(currentKeg)">Edit</button>
     <button (click)="sellButtonClicked(currentKeg)">Sell</button>
