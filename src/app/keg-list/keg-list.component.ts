@@ -21,9 +21,9 @@ export class KegListComponent  {
 }
 
 typeColor(currentKeg) {
-  if (currentKeg.type == 'ipa') {
+  if (currentKeg.type == 'IPA') {
     return "bg-success";
-  } else if (currentKeg.type == 'stout'){
+  } else if (currentKeg.type == 'Stout'){
     return "bg-warning";
   } else {
     return "bg-info";
