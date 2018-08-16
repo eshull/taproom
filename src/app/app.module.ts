@@ -14,6 +14,7 @@ import { PatronComponent } from './patron/patron.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { routing } from './app.routing';
 import { LowKegComponent } from './low-keg/low-keg.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { LowKegComponent } from './low-keg/low-keg.component';
     EmployeeComponent,
     FeaturePipe,
     LowKegComponent,
-    LowPipe
+    LowPipe,
+    NavComponent
   ],
   imports: [
     BrowserModule,

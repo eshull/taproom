@@ -1,17 +1,21 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <app-keg-list [childKegList]="masterKegList"  (clickSender)="editKeg($event)"></app-keg-list>
+<app-nav></app-nav>
+<div class="container">
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
   </div>
-  <div id="lowKeg" class="col-md-6">
-    <app-low-keg [childKegList]="masterKegList"></app-low-keg>
-  </div>
-  <app-tapkeg (sendKeg)="addKeg($event)" ></app-tapkeg>
 
-  <app-edit-keg [childSelectedKeg]="selectedKeg"  (clickedDone)="finishedEdit()"></app-edit-keg>
+  <router-outlet></router-outlet>
+  <div class="row">
+    <div class="col-md-6">
+      <app-keg-list [childKegList]="masterKegList"  (clickSender)="editKeg($event)"></app-keg-list>
+    </div>
+    <div id="lowKeg" class="col-md-6">
+      <app-low-keg [childKegList]="masterKegList"></app-low-keg>
+    </div>
+    <app-tapkeg (sendKeg)="addKeg($event)" ></app-tapkeg>
+
+    <app-edit-keg [childSelectedKeg]="selectedKeg"  (clickedDone)="finishedEdit()"></app-edit-keg>
+  </div>
 </div>
