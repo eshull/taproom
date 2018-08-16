@@ -5,8 +5,6 @@
   <option value="highAlcohol">High Alcohol Content</option>
   <option value="highPrice">Premium price</option>
 </select>
-<div class="row">
-  <div class="col-md-4">
     <div *ngFor="let currentKeg of childKegList | alcoholness:filterByAlcoholness">
       <div  [class]="typeColor(currentKeg)" >
         <h3  (click)="showKeg(currentKeg)">{{currentKeg.name}}</h3>
@@ -23,6 +21,3 @@
         </div>
       </div>
     </div>
-  </div>
-
-</div>

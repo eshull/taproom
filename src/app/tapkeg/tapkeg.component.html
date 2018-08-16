@@ -1,30 +1,33 @@
-<h1>New Keg</h1>
-<div>
- <label>Enter Keg Name:</label>
- <input #newName>
-</div>
-<div>
- <label>Enter Keg Brand:</label>
- <input #newBrand>
-</div>
-<div>
-  <label>Keg Type:</label>
- <select #newType>
-    <option value="IPA"> IPA </option>
-    <option value="Stout"> Stout </option>
-    <option value="Brown"> Brown </option>
-  </select>
+<button (click)=showAddKeg()>Add New Keg</button>
+<div id="addKeg" *ngIf="show" >
+  <h1>New Keg</h1>
+  <div>
+   <label>Enter Keg Name:</label>
+   <input #newName>
+  </div>
+  <div>
+   <label>Enter Keg Brand:</label>
+   <input #newBrand>
+  </div>
+  <div>
+    <label>Keg Type:</label>
+   <select #newType>
+      <option value="IPA"> IPA </option>
+      <option value="Stout"> Stout </option>
+      <option value="Brown"> Brown </option>
+    </select>
 
-</div>
-<div>
- <label>Enter Keg Price:</label>
- <input #newPrice>
-</div>
-<div>
- <label>Enter Keg Alcohot Content:</label>
- <input #newAlcoholCnt>
-</div>
-<div>
-    <button (click)="submitForm(newName.value, newBrand.value, newType.value, newPrice.value, newAlcoholCnt.value); newName.value=''; newBrand.value=''; newType.value=''; newPrice.value=''; newAlcoholCnt.value='';">Tap Keg</button>
+  </div>
+  <div>
+   <label>Enter Keg Price:</label>
+   <input #newPrice>
+  </div>
+  <div>
+   <label>Enter Keg Alcohot Content:</label>
+   <input #newAlcoholCnt>
+  </div>
+  <div>
+      <button (click)="submitForm(newName.value, newBrand.value, newType.value, newPrice.value, newAlcoholCnt.value); newName.value=''; newBrand.value=''; newType.value=''; newPrice.value=''; newAlcoholCnt.value='';">Tap Keg</button>
 
+  </div>
 </div>

@@ -9,10 +9,15 @@ import { Keg } from '../models/keg-model';
 export class TapkegComponent  {
  @Output() sendKeg = new EventEmitter();
 
+ public show: boolean = false;
+
   submitForm(name: string, brand: string, type: string, price: string, alcoholCnt: string) {
     let newKeg: Keg = new Keg(name, brand, type, parseInt(price), parseInt(alcoholCnt));
     console.log(newKeg.type)
     this.sendKeg.emit(newKeg);
   }
 
+  showAddKeg(){
+    this.show = !this.show;
+  }
 }
