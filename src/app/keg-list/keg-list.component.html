@@ -1,24 +1,34 @@
-<h1>Keg List</h1>
-<div [class]="typeColor(currentKeg)" *ngFor="let currentKeg of childKegList">
-  <h4  (click)="showKeg(currentKeg)">{{currentKeg.name}}</h4>
-  <div *ngIf="kegToShow && kegToShow == currentKeg">
-    <ul>
-      <li>Brewery: {{currentKeg.brand}}</li>
-    </ul>
 
-    <ul>
-      <li>Type: {{currentKeg.type}}</li>
-    </ul>
-    <ul>
-      <li>ABU: {{currentKeg.alcoholCnt}}%</li>
-    </ul>
-    <ul>
-      <li>Price/pnt: ${{currentKeg.price}}</li>
-    </ul>
-    <ul>
-      <li [class]="kegLow(currentKeg)">Number of Pints Remaining: {{currentKeg.volumeByPint}}</li>
-    </ul>
-    <button (click)="editButtonClicked(currentKeg)">Edit</button>
-    <button (click)="sellButtonClicked(currentKeg)">Sell</button>
+<h1>Keg List</h1>
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs" selected="selected">All Kegs</option>
+  <option value="highAlcohol">High Alcohol Content</option>
+  <option value="highPrice">Premium price</option>
+</select>
+<div class="row">
+  <div class="col-md-4" *ngFor="let currentKeg of childKegList | alcoholness:filterByAlcoholness">
+    <div  [class]="typeColor(currentKeg)" >
+      <h4  (click)="showKeg(currentKeg)">{{currentKeg.name}}</h4>
+      <div *ngIf="kegToShow && kegToShow == currentKeg">
+        <ul>
+          <li>Brewery: {{currentKeg.brand}}</li>
+        </ul>
+
+        <ul>
+          <li>Type: {{currentKeg.type}}</li>
+        </ul>
+        <ul>
+          <li>ABU: {{currentKeg.alcoholCnt}}%</li>
+        </ul>
+        <ul>
+          <li>Price/pnt: ${{currentKeg.price}}</li>
+        </ul>
+        <ul>
+          <li [class]="kegLow(currentKeg)">Number of Pints Remaining: {{currentKeg.volumeByPint}}</li>
+        </ul>
+        <button (click)="editButtonClicked(currentKeg)">Edit</button>
+        <button (click)="sellButtonClicked(currentKeg)">Sell</button>
+      </div>
+    </div>
   </div>
 </div>

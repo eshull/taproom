@@ -52,4 +52,10 @@ sellButtonClicked(kegToSell: Keg){
   kegToSell.volumeByPint --;
 }
 
+filterByAlcoholness: string = "allKegs";
+
+onChange(optionFromMenu){
+  this.filterByAlcoholness = optionFromMenu;
+}
+
 }
