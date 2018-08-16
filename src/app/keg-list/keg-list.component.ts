@@ -24,11 +24,11 @@ export class KegListComponent  {
 
 typeColor(currentKeg) {
   if (currentKeg.type == 'IPA') {
-    return "bg-success";
+    return "ipaClass";
   } else if (currentKeg.type == 'Stout'){
-    return "bg-warning";
+    return "stoutClass";
   } else {
-    return "bg-info";
+    return "brownClass";
   }
 }
 
