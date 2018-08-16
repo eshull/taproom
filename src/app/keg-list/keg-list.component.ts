@@ -53,6 +53,7 @@ sellButtonClicked(kegToSell: Keg){
 }
 
 filterByAlcoholness: string = "allKegs";
+filterByType: string;
 
 onChange(optionFromMenu){
   this.filterByAlcoholness = optionFromMenu;

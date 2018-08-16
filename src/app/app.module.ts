@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { FeaturePipe } from './feature.pipe';
+import { LowPipe } from './low.pipe';
 
 
 
@@ -12,6 +13,7 @@ import { EditKegComponent } from './edit-keg/edit-keg.component';
 import { PatronComponent } from './patron/patron.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { routing } from './app.routing';
+import { LowKegComponent } from './low-keg/low-keg.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { routing } from './app.routing';
     EditKegComponent,
     PatronComponent,
     EmployeeComponent,
-    FeaturePipe
+    FeaturePipe,
+    LowKegComponent,
+    LowPipe
   ],
   imports: [
     BrowserModule,

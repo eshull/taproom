@@ -4,6 +4,14 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<app-tapkeg (sendKeg)="addKeg($event)" ></app-tapkeg>
-<app-keg-list [childKegList]="masterKegList"  (clickSender)="editKeg($event)"></app-keg-list>
-<app-edit-keg [childSelectedKeg]="selectedKeg"  (clickedDone)="finishedEdit()"></app-edit-keg>
+<div class="row">
+  <div class="col-md-6">
+    <app-keg-list [childKegList]="masterKegList"  (clickSender)="editKeg($event)"></app-keg-list>
+  </div>
+  <div id="lowKeg" class="col-md-6">
+    <app-low-keg [childKegList]="masterKegList"></app-low-keg>
+  </div>
+  <app-tapkeg (sendKeg)="addKeg($event)" ></app-tapkeg>
+
+  <app-edit-keg [childSelectedKeg]="selectedKeg"  (clickedDone)="finishedEdit()"></app-edit-keg>
+</div>
