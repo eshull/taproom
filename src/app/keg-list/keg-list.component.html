@@ -12,12 +12,14 @@
           <ul>
             <h4>Brewery: {{currentKeg.brand}}</h4>
             <h4>Type: {{currentKeg.type}}</h4>
-            <h4>ABU: {{currentKeg.alcoholCnt}}%</h4>
+            <h4>ABV: {{currentKeg.alcoholCnt}}%</h4>
             <h4>Price/pnt: ${{currentKeg.price}}</h4>
             <h4 [class]="kegLow(currentKeg)">Number of Pints Remaining: {{currentKeg.volumeByPint}}</h4>
           </ul>
           <button (click)="editButtonClicked(currentKeg)">Edit</button>
-          <button (click)="sellButtonClicked(currentKeg)">Sell</button>
+          <button (click)="sellButtonClicked(currentKeg)">Sell Pint</button>
+          <button (click)="sellButtonGrowlerClicked(currentKeg)">Sell Small Growler</button>
+          <button (click)="sellButtonLargerGrowlerClicked(currentKeg)">Sell Large Growler</button>
         </div>
       </div>
     </div>

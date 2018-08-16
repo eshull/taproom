@@ -49,7 +49,22 @@ editButtonClicked(kegToEdit: Keg){
 }
 
 sellButtonClicked(kegToSell: Keg){
-  kegToSell.volumeByPint --;
+  if(kegToSell.volumeByPint >0){
+    kegToSell.volumeByPint --;
+  }
+}
+
+sellButtonGrowlerClicked(kegToSell: Keg){
+  if(kegToSell.volumeByPint >0){
+    kegToSell.volumeByPint -=2;
+  }
+}
+
+sellButtonLargerGrowlerClicked(kegToSell: Keg){
+  if(kegToSell.volumeByPint >0){
+    kegToSell.volumeByPint -=4;
+  }
+
 }
 
 filterByAlcoholness: string = "allKegs";

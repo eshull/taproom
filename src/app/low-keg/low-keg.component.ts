@@ -11,7 +11,13 @@ export class LowKegComponent {
 
   @Input() childKegList: Keg[];
 
+  noKegs: boolean = false;
 
+  showLowKeg(){
+    if(this.childKegList.length > 0){
+      this.noKegs = true;
+    }
+  }
 
 
 
